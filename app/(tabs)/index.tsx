@@ -1,16 +1,18 @@
-import { ActivityIndicator, Image,ScrollView, Text, View } from "react-native";
+import { ActivityIndicator, Image,ScrollView, Text, View, FlatList } from "react-native";
+import React, { useEffect } from 'react';
+import { useRouter } from "expo-router";
+
 import {images} from "@/constants/images";
 import { icons } from "@/constants/icons";
+
 import SearchBar from "@/components/SearchBar";
-import { useRouter } from "expo-router";
-import useFetch from "@/services/useFetch";
-import { fetchPopularMovies } from "@/services/api";
-// import { FlatList } from "react-native-reanimated/lib/typescript/Animated";
-import { FlatList } from "react-native";
-import React, { useEffect } from 'react';
 import MovieCard from "@/components/MovieCard";
 
+import useFetch from "@/services/useFetch";
+import { fetchPopularMovies } from "@/services/api"
+
 export default function Index() {
+
   const router = useRouter();
 
   const { 
